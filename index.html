@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skincare Routine Generator</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body style="background-image: url('images/background.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+
+    <header>
+        <h1>Skincare Routine Generator</h1>
+    </header>
+    
+    <main>
+        <section class="user-input">
+            <form id="skin-form">
+                <div class="form-group">
+                    <label for="skin-type">Skin Type:</label>
+                    <select id="skin-type" required>
+                        <option value="">Select your skin type</option>
+                        <option value="oily">Oily</option>
+                        <option value="dry">Dry</option>
+                        <option value="combination">Combination</option>
+                        <option value="sensitive">Sensitive</option>
+                        <option value="normal">Normal</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Skin Concerns:</label>
+                    <div class="concerns-list">
+                        <label><input type="checkbox" name="concerns" value="acne"> Acne</label>
+                        <label><input type="checkbox" name="concerns" value="aging"> Aging</label>
+                        <label><input type="checkbox" name="concerns" value="hydration"> Hydration</label>
+                        <label><input type="checkbox" name="concerns" value="redness"> Redness</label>
+                        <label><input type="checkbox" name="concerns" value="dark-spots"> Dark Spots</label>
+                    </div>
+                </div>
+                
+                <button type="submit" id="generate-btn">Generate Routine</button>
+            </form>
+        </section>
+        
+        <section class="routine-display" id="routine-display">
+            <!-- Generated routine will appear here -->
+        </section>
+        
+        <section class="favorites" id="favorites-section">
+            <h2>Saved Routines</h2>
+            <div id="favorites-list"></div>
+        </section>
+    </main>
+    
+    <script src="js/index.js"></script>
+</body>
+</html>

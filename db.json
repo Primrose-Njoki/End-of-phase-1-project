@@ -1,0 +1,104 @@
+
+{
+  "routines": [
+      {
+          "skinType": "oily",
+          "concerns": ["acne"],
+          "priority": 5,
+          "morning": [
+              "Cleanser with salicylic acid",
+              "Alcohol-free toner",
+              "Oil-free moisturizer with SPF",
+              "Spot treatment for active breakouts"
+          ],
+          "night": [
+              "Double cleanse (oil-based then water-based)",
+              "Exfoliating toner (2-3 times weekly)",
+              "Retinol serum (start with low concentration)",
+              "Lightweight, oil-free moisturizer"
+          ]
+      },
+      {
+          "skinType": "dry",
+          "concerns": ["hydration"],
+          "priority": 4,
+          "morning": [
+              "Gentle, creamy cleanser",
+              "Hydrating toner with hyaluronic acid",
+              "Rich moisturizer",
+              "Sunscreen with moisturizing properties"
+          ],
+          "night": [
+              "Cleansing balm or oil",
+              "Hydrating serum",
+              "Night cream with ceramides",
+              "Face oil (optional for extra hydration)"
+          ]
+      },
+      {
+          "skinType": "combination",
+          "concerns": ["acne", "hydration"],
+          "priority": 3,
+          "morning": [
+              "Gentle foaming cleanser",
+              "Hydrating toner (avoid alcohol)",
+              "Light moisturizer on oily zones, richer on dry zones",
+              "Broad-spectrum sunscreen"
+          ],
+          "night": [
+              "Double cleanse",
+              "Exfoliating toner (only on oily zones)",
+              "Hydrating serum on dry zones",
+              "Lightweight moisturizer all over"
+          ]
+      },
+      {
+          "skinType": "sensitive",
+          "concerns": ["redness"],
+          "priority": 2,
+          "morning": [
+              "Ultra-gentle cleanser",
+              "Soothing toner with chamomile",
+              "Fragrance-free moisturizer",
+              "Mineral sunscreen"
+          ],
+          "night": [
+              "Micellar water or milk cleanser",
+              "Calming serum with niacinamide",
+              "Barrier-repair moisturizer",
+              "Cooling gel mask (as needed)"
+          ]
+      },
+      {
+          "skinType": "dry",
+          "concerns": ["aging"],
+          "priority": 1,
+          "morning": [
+              "Gentle cleanser",
+              "Antioxidant serum (Vitamin C)",
+              "Peptide moisturizer",
+              "SPF 30+ sunscreen"
+          ],
+          "night": [
+              "Cleansing oil",
+              "Hydrating toner",
+              "Retinol treatment (start slowly)",
+              "Rich night cream"
+          ]
+      }
+  ],
+  "defaultRoutine": {
+      "skinType": "normal",
+      "concerns": ["basic"],
+      "morning": [
+          "Gentle cleanser",
+          "Moisturizer",
+          "Sunscreen SPF 30+"
+      ],
+      "night": [
+          "Cleanser",
+          "Moisturizer"
+      ]
+  },
+  "favorites": []
+}
