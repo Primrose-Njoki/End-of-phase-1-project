@@ -3,6 +3,7 @@
   "routines": [
       {
           "skinType": "oily",
+          "img url" : "https://woodscopenhagen.com/cdn/shop/articles/oily.jpg?v=1701689459&width=1100",
           "concerns": ["acne"],
           "priority": 5,
           "morning": [
