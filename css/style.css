@@ -128,4 +128,9 @@ button:hover {
     }
 }
 
+.dark-mode {
+    background-color: black;
+    color: white;
+    
+}
 

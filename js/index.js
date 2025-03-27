@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById("dark-mode-toggle").addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+    });
     // DOM Elements
     const skinForm = document.getElementById('skin-form');
     const routineDisplay = document.getElementById('routine-display');
@@ -7,10 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event Listeners
     skinForm.addEventListener('submit', generateRoutine);
     
-    // Load favorites from db.json
+
     loadFavorites();
-    
-    // Generate routine based on user input
+
     function generateRoutine(e) {
         e.preventDefault();
         
@@ -32,9 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 return response.json();
             })
             .then(data => {
-                console.log('Fetched data:', data); // Debug log
+                console.log('Fetched data:', data); 
                 const routine = findMatchingRoutine(data, skinType, concerns);
-                console.log('Matched routine:', routine); // Debug log
+                console.log('Matched routine:', routine); 
                 displayRoutine(routine);
             })
             .catch(error => {
@@ -43,9 +45,9 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
     
-    // Find matching routine in database
+    
     function findMatchingRoutine(data, skinType, concerns) {
-        // First try to find exact match for skin type and all selected concerns
+        
         const exactMatches = data.routines.filter(routine => 
             routine.skinType === skinType && 
             concerns.every(concern => routine.concerns.includes(concern)));
@@ -54,13 +56,13 @@ document.addEventListener('DOMContentLoaded', function() {
             return exactMatches[0];
         }
         
-        // If no exact match, find routines that match skin type and at least one concern
+        
         const partialMatches = data.routines.filter(routine => 
             routine.skinType === skinType && 
             concerns.some(concern => routine.concerns.includes(concern)));
         
         if (partialMatches.length > 0) {
-            // Sort by number of matching concerns (highest first)
+            
             partialMatches.sort((a, b) => {
                 const aMatches = a.concerns.filter(c => concerns.includes(c)).length;
                 const bMatches = b.concerns.filter(c => concerns.includes(c)).length;
@@ -69,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return partialMatches[0];
         }
         
-        // If no matches at all, return default routine
+        
         return data.defaultRoutine;
     }
     
@@ -103,22 +105,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button id="save-routine">Save to Favorites</button>
             </div>
         `;
-        
-        // Add event listener to save button
+    
         document.getElementById('save-routine').addEventListener('click', () => saveRoutine(routine));
     }
-    
-    // Helper function to capitalize first letter
-    function capitalizeFirstLetter(string) {
+    const routineImage = document.getElementById("routine-image");
+
+
+function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
     
     // Save routine to favorites
     function saveRoutine(routine) {
-        // In a real app, we would POST to a server
-        // For this demo, we'll update the local db.json and UI
         
-        // Generate unique ID for the routine
+        
+        
         routine.id = Date.now();
         
         // Get current favorites
@@ -130,8 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 data.favorites.push(routine);
                 
-                // In a real app, we would send this back to the server
-                // For demo, we'll just update the UI
+            
                 updateFavoritesUI([routine]);
                 
                 alert('Routine saved to favorites!');
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Update favorites list in UI
     function updateFavoritesUI(favorites) {
-        favoritesList.innerHTML = ''; // Clear current list
+        favoritesList.innerHTML = ''; 
         
         favorites.forEach(routine => {
             const favoriteItem = document.createElement('div');
@@ -182,8 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function deleteFavorite(e) {
         const id = parseInt(e.target.getAttribute('data-id'));
         
-        // In a real app, we would DELETE from server
-        // For demo, we'll just remove from UI
+    
         e.target.parentElement.remove();
     }
     
@@ -202,5 +201,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             })
             .catch(error => console.error('Error:', error));
+
+           
+            
     }
 });
