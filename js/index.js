@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return partialMatches[0];
         }
         
-        
         return data.defaultRoutine;
     }
     
