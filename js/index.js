@@ -179,6 +179,7 @@ function capitalizeFirstLetter(string) {
     
     // Delete favorite routine
     function deleteFavorite(e) {
+        
         const id = parseInt(e.target.getAttribute('data-id'));
         
     
