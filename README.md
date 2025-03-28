@@ -49,4 +49,6 @@ A web application that generates personalized morning and night skincare routine
 3. Button clicks for deleting favorites
 4. Button clicks for using saved routines
 
-##
+## contributors
+primrose
+
