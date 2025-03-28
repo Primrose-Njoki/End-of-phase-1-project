@@ -1,17 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+    //Event listener
     document.getElementById("dark-mode-toggle").addEventListener("click", function () {
         document.body.classList.toggle("dark-mode");
     });
-    // DOM Elements
+
+    // DOM Elements -declares variables in brackets
     const skinForm = document.getElementById('skin-form');
     const routineDisplay = document.getElementById('routine-display');
     const favoritesList = document.getElementById('favorites-list');
     
-    // Event Listeners
+    // Event Listeners-callbacks the generateRoutine function
     skinForm.addEventListener('submit', generateRoutine);
     
-
+    // load favorites from db.json
     loadFavorites();
+
+    //Generate routine based on users inputs
 
     function generateRoutine(e) {
         e.preventDefault();
@@ -45,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
     
-    
+    // finds matching routine
     function findMatchingRoutine(data, skinType, concerns) {
         
         const exactMatches = data.routines.filter(routine => 
@@ -117,8 +122,7 @@ function capitalizeFirstLetter(string) {
     // Save routine to favorites
     function saveRoutine(routine) {
         
-        
-        
+    
         routine.id = Date.now();
         
         // Get current favorites
