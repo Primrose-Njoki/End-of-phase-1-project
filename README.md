@@ -35,6 +35,11 @@ A web application that generates personalized morning and night skincare routine
 2. Open `index.html` in a web browser
 3. Or use a local server (like Live Server in VSCode) to avoid CORS issues with fetch
 
+## livelink 
+https://wonderful-valkyrie-4096e1.netlify.app/ 
+
+
+
 ## CRUD Operations
 
 1. **CREATE** - Save routines to favorites
@@ -51,4 +56,6 @@ A web application that generates personalized morning and night skincare routine
 
 ## contributors
 primrose
+
+
 
